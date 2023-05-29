@@ -1,4 +1,5 @@
 name: 'coverage'
+
 on:
   push:
     branches:
@@ -7,6 +8,7 @@ on:
   pull_request:
     type: [opened, reopened, synchronize]
   workflow_dispatch:
+
 jobs:
   coverage:
     runs-on: ubuntu-latest
