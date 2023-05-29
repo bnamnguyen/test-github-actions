@@ -1,20 +1,19 @@
 name: 'coverage'
 on:
-    push:
-        branches:
-            - master
-            - main
-    pull_request:
-        branches:
-            - master
-            - main
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    type: [opened, reopened, synchronize]
+  workflow_dispatch:
 jobs:
-    coverage:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: ArtiomTr/jest-coverage-report-action@v2
-              with:
-                github-token: ${{ secrets.GITHUB_TOKEN }}
-                threshold: 90
-                skip-step: install
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          threshold: 90
+          skip-step: install
