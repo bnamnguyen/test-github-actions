@@ -12,7 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
-      - name: Jest coverage report
       - uses: ArtiomTr/jest-coverage-report-action@v2.2.4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
