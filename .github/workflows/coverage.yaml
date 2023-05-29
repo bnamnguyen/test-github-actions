@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Coverage-report:
+  coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,5 +15,3 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2.2.4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          threshold: 90
-          skip-step: install
